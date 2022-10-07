@@ -101,7 +101,7 @@ const loginScreen = () => {
             <div className="text-red-500">{errors.password.message} </div>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-5">
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             {...register('confirmPassword', {
@@ -127,10 +127,10 @@ const loginScreen = () => {
               <div className="text-red-500"> Password dont&apos;t match</div>
             )}
         </div>
-        <div className="mb-4">
+        <div className="mb-5">
           <button className="primary-button">Register</button>
         </div>
-        <div className="mb-4">
+        <div className="mb-5">
           Already have an account? &nbsp;{' '}
           <Link href={`/register?redirect=${redirect || '/'}`}> Login</Link>
         </div>
