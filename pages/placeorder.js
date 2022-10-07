@@ -35,7 +35,7 @@ const placeorder = () => {
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post('/api/orders', {
+      const { data } = await axios.post('/api/orders/index', {
         orderItems: cartItems,
         shippingAddress,
         paymentMethod,
@@ -159,7 +159,7 @@ const placeorder = () => {
                 <li>
                   <button
                     disabled={loading}
-                    onClick={placeOrderHandler}
+                    onClick={() => placeOrderHandler}
                     className="primary-button w-full"
                   >
                     {loading ? 'Loading...' : 'Place Order'}
@@ -174,4 +174,4 @@ const placeorder = () => {
   );
 };
 placeorder.auth = true;
-export default dynamic(() => Promise.resolve(placeorder), { ssr: false });
+export default placeorder; /* dynamic(() => Promise.resolve(placeorder), { ssr: false }); */
